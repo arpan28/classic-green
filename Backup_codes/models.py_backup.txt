@@ -1,0 +1,42 @@
+from django.db import models
+
+# Create your models here.
+# class Color(models.Model):
+#     # To allow different colors to be chosen by the user
+#     # colorPrice = models.IntegerField(max_length = 20)
+#     colorVariant = models.CharField(max_length = 20)
+#     # colorImage = models.ImageField(upload_to='colorImg')
+
+class Variant(models.Model):
+    DEFAULT_PK=1
+    class Meta:
+            verbose_name_plural = 'Colorsvar'
+    Variant = models.CharField(max_length = 20)
+    VarientStockCount = models.IntegerField(max_length=10)
+    VarientItemImage = models.ImageField(upload_to ='', null=True)
+    #itemName = models.ForeignKey(Item,)
+# This is the database for plants 
+class Item(models.Model):
+    Name = models.CharField(max_length=30)
+    ScintificName = models.CharField(max_length=30,blank=True,null=True)
+    Category = models.CharField(max_length=30,blank=True,null=True)
+    Price = models.FloatField(max_length=30,blank=True,null=True)
+    # stockCount = models.IntegerField(max_length=30)
+    Description = models.CharField(max_length=1000,blank=True,null=True)
+    Height = models.FloatField(max_length=1000,blank=True,null=True)
+    Girth = models.FloatField(max_length=1000,blank=True,null=True)
+
+    # image = models.ImageField(upload_to ='', null=True) ise b 
+    #colorVariantSelected = models.ForeignKey(Colorsvar,on_delete=models.PROTECT,default=Colorsvar.DEFAULT_PK)
+
+class ItemCat(models.Model):
+    CatName = models.CharField(max_length=30)
+
+class Offer(models.Model):
+    offerName = models.CharField(max_length = 100)
+    offerDescription = models.CharField(max_length = 1000)
+    offerImage = models.ImageField(upload_to='offerImg')
+    
+
+
+    

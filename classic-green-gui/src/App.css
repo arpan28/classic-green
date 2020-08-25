@@ -1,0 +1,195 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:500);
+.App {
+  text-align: center;
+}
+
+.style-app{
+    /* The image used */
+    /* background-color: #EBF5FB ; */
+    background-color: #dde5e8;
+  
+    /* Set a specific height */
+    /* height: 500px; */
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100%  
+}
+.parallax{
+
+  height:1000px;
+  background-color:red;
+  font-size:36px
+}
+.navbar-contents{
+  /* text-align: center; */
+  /* /* position: center; */
+  margin-left: 40%;
+  color: black;
+}
+.vert-align {
+  top:0;
+  position: fixed;
+  z-index:100;
+  /* text-align: center; */
+  width:100%;
+  background-color: #6b6655;
+}
+
+/* To style the thumbnail with item data */
+.style-item-thumbnail{
+  margin: auto;
+    margin-bottom: 30px;
+    /* padding: 10px; */
+    width: 12.5rem;
+    /* background-color: #2a2929; */
+    /* border: 1px solid black;  */
+    height:auto; 
+    border-radius: 25px;
+
+
+}
+.style-item-thumbnail img{ 
+  /* display: block; */
+
+  width:relative;
+  height:auto; 
+} 
+.style-item-thumbnail img:hover{
+  transform: scale(1.1)
+}
+
+.thumbnail-img{
+  border-radius: 40px;
+
+}
+
+div.gallery {
+  margin:auto;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+  height: auto;
+  margin-left: 10px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+  transform: scale(1.1) 
+}
+
+div.gallery img {
+  width: 100%;
+  height: 170px;
+  border-radius: 24px;
+
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+.style-company-name{
+  color:#ff69b4;
+  /* font-size: bold; */
+  /* font-family: Snell ; */
+  font-style: oblique;
+  font-weight: 750;
+  margin-top: 0.4%;
+  font-size: larger;
+
+}
+/* give class accoringly to be put in grid */
+.item1 { grid-area: header; }
+.item2 { grid-area: right; }
+.item3 { grid-area: left; }
+
+
+
+.list-items{
+  
+  display:grid;
+  border:10px;
+  grid-gap:  20px;
+  grid-template-columns: repeat(11,1fr);
+  margin:auto
+}
+.side-panel{
+  background-color:rgba(213, 245, 246, 0.863) ;
+  grid-column: 1/1;
+  border-radius: 15px;
+  color:rgb(241, 155, 84)
+
+}
+.view-panel{
+  background-color: rgba(59, 174, 250, 0.171);
+  grid-column: 2/12;
+}
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header'
+    'right left left';
+  grid-gap: 20px;
+  background-color:transparent;
+  /* padding: 10px; */
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  /* padding: 20px 0; */
+  font-size: 30px;
+}
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	/* Compensate for excess margin on outer gallery flex items */
+	margin: -1rem -1rem;
+}
+
+.gallery-item {
+	/* Minimum width of 24rem and grow to fit available space */
+	flex: 1 0 24rem;
+	/* Margin value should be half of grid-gap value as margins on flex items don't collapse */
+	margin: 1rem;
+	box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+	overflow: hidden;
+}
+
+.gallery-image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 400ms ease-out;
+}
+
+.gallery-image:hover {
+	transform: scale(1.15);
+}
+
+/*
+
+The following rule will only run if your browser supports CSS grid.
+
+Remove or comment-out the code block below to see how the browser will fall-back to flexbox styling. 
+
+*/
+
+@supports (display: grid) {
+	.gallery {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+		grid-gap: 2rem;
+	}
+
+	.gallery,
+	.gallery-item {
+		margin: 0;
+	}
+}
